@@ -5,6 +5,12 @@ metadata:
   labels:
     app: myapp
 spec:
+  
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   replicas: 4
   selector:
     matchLabels:
